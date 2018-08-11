@@ -99,7 +99,7 @@ module.exports = {
 };
 ```
 
-
+Example : https://github.com/nishants/webpack-lessons/tree/master/02-multi-chunks
 
 **Quiz**
 
@@ -143,6 +143,9 @@ module.exports = {
       }
   }
   ```
+  Example : https://github.com/nishants/webpack-lessons/tree/master/02-multi-chunks
+
+  ​
 
 - **Public path** for output files
 
@@ -159,12 +162,19 @@ module.exports = {
 
 - Setting **public path dynamically** (entry point file)
 
-  ```js
-  __webpack_public_path__ = myRuntimePublicPath;
+```js
+__webpack_public_path__ = myRuntimePublicPath;
 
-  // entry point js file
-  ```
-#  
+// entry point js file
+```
+**Quiz :**
+
+- can there be more than one output file ?
+- what is substitution in ouptput file names ? when do we use it ?
+- can we define public path for bundled output ?
+- can we specify the public path for output in entry file ?
+
+# 
 
 
 
@@ -174,10 +184,12 @@ module.exports = {
 
 - by default webpack suports only js modules, for every other type (image, css, typescript etc) we need to add a loader
 
-- loader is specified by two params : 
+- applies transformations on the source code of modules
 
-  - **test**
-  - **use**
+- loader is specified as **module.rules** with two params : 
+
+  - **test** (what extension types to apply loader to)
+  - **use** (which loader to apply)
 
   ```js
   module.exports = {
@@ -194,17 +206,86 @@ module.exports = {
 
 - for above declaration, webpack will use 'raw-loader' for loading the files with .txt extension
 
-# 
+- loaders are chained and exectured in **reverse order** (bottom to top or right to left)
+
+- **a loader passes its result to the next loader in chain**
+
+- Finally, javascript code is returned by last loader that exectues in the chain
+
+- loaders run in node env
+
+- can be synchronous or asynchronous
+
+- can be passed an **options** object
+
+- **loaders can emit additional arbitrary files** (apart for output chunks)
 
 
 
-**Questions**
+**Three ways of using loader for a file type**
+
+- webpack configuration (recommended)
+- inline (with import statement)
+- from CLI
+
+
+
+**Defining a loader**
+
+- loaders can either be resolved from node_modules
+- or be described as file in source code
+
+**Defining loader from a file** 
+
+```js
+module.exports = {
+  //...
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader: path.resolve('path/to/loader.js'),
+            options: {/* ... */}
+          }
+        ]
+      }
+    ]
+  }
+};
+```
+
+**Defining a directory with loaders**
+
+-  there could be multiple loaders defined for a project
+- lets say all these loaders are present in a dir "loaders"
+- the user resolveLoader attribute to search for loaders in the dir (apart form node_modules)
+
+```js
+module.exports = {
+  //...
+  resolveLoader: {
+    modules: [
+      'node_modules',
+      path.resolve(__dirname, 'loaders')
+    ]
+  }
+};
+```
+
+
+
+#**Questions**
 
 - can there be more than one entry point ?
 - can there be more than one output file ?
 - what is substitution in ouptput file names ? when do we use it ?
 - can we define public path for bundled output ?
 - can we specify the public path for output in entry file ?
+- How many ways can a loader be applied to a filetype ? Name them.
+- How can you pass options to loader in webpack config ?
+- ​
 
 
 
