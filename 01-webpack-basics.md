@@ -8,14 +8,12 @@
 
 
 
-
 ## Key Concepts
 
- - **Entry**
- - **Output**
- - **Loaders**
- - **Plugins**
-
+- **Entry**
+- **Output**
+- **Loaders**
+- **Plugins**
 
 
 
@@ -35,7 +33,6 @@ module.exports = {
 
 - Above is same as 
 
-
 ```js
 module.exports = {
     entry: {
@@ -48,13 +45,12 @@ module.exports = {
 
 
 
-
 **Multi-main entry**
 
 - entry point can be an array
 - the multiple entry points, with their depedencies are compiled into a **single chunk**
 - often used to include dependecies
--  e.g following compiles babel-polyfill along with project source into a single chunk
+- e.g following compiles babel-polyfill along with project source into a single chunk
 
 ```js
 entry: {
@@ -79,8 +75,6 @@ entry: {
     }
   };
   ```
-
-
 
 **Multiple Page applications**
 
@@ -110,7 +104,7 @@ Example : https://github.com/nishants/webpack-lessons/tree/master/02-multi-chunk
 - what is webpack bootstrap  ?
 - What is the use of CommonsChunkPlugin ?
 
-# 
+#  
 
 ### Output
 
@@ -143,14 +137,14 @@ module.exports = {
       }
   }
   ```
+
   Example : https://github.com/nishants/webpack-lessons/tree/master/02-multi-chunks
 
   ​
 
 - **Public path** for output files
 
-
-  ```js
+```js
   module.exports = {
       entry: {...},
       output: {
@@ -158,7 +152,7 @@ module.exports = {
 	     publicPath: 'http://cdn.example.com/assets/[hash]/'
       }
   }
-  ```
+```
 
 - Setting **public path dynamically** (entry point file)
 
@@ -167,6 +161,7 @@ __webpack_public_path__ = myRuntimePublicPath;
 
 // entry point js file
 ```
+
 **Quiz :**
 
 - can there be more than one output file decalaration in config?
@@ -174,7 +169,7 @@ __webpack_public_path__ = myRuntimePublicPath;
 - can we define public path for bundled output ?
 - can we specify the public path for output in entry file ?
 
-# 
+#  
 
 
 
@@ -220,15 +215,11 @@ __webpack_public_path__ = myRuntimePublicPath;
 
 - **loaders can emit additional arbitrary files** (apart for output chunks)
 
-
-
 **Three ways of using loader for a file type**
 
 - webpack configuration (recommended)
 - inline (with import statement)
 - from CLI
-
-
 
 **Defining a loader**
 
@@ -258,7 +249,7 @@ module.exports = {
 
 **Defining a directory with loaders**
 
--  there could be multiple loaders defined for a project
+- there could be multiple loaders defined for a project
 - lets say all these loaders are present in a dir "loaders"
 - the user resolveLoader attribute to search for loaders in the dir (apart form node_modules)
 
@@ -276,15 +267,14 @@ module.exports = {
 
 
 
-#**Questions**
+# **Questions**
 
 - How many ways can a loader be applied to a filetype ? Name them.
 - How can you pass options to loader in webpack config ?
 
 
 
-
-# How loaders work? 
+# How loaders work?
 
 - A loader is just a module that exports a function
 
@@ -318,8 +308,6 @@ module.exports = {
   }
   ```
 
-
-
 # Plugins
 
 - plugins are what power the compiler of webpack
@@ -329,6 +317,7 @@ module.exports = {
 - e.g 
 
 **Using a plugin**
+
 ```js
   const HtmlWebpackPlugin = require('html-webpack-plugin'); //installed via npm
   const webpack = require('webpack'); //to access built-in plugins
@@ -356,6 +345,7 @@ module.exports = {
 ```
 
 **Declaring a plugin**
+
 ```js
   const pluginName = 'ConsoleLogOnBuildWebpackPlugin';
 
@@ -374,4 +364,3 @@ module.exports = {
 
 - Merging various webpack configurations : https://github.com/survivejs/webpack-merge
 - ​
-
