@@ -16,7 +16,12 @@ module.exports = {
         use: [
           {
             loader: path.resolve('./src/custom-image-loader.js'),
-            options: {/* ... */}
+            options: {
+              assetPath: (imageAbsolutePath)=> {
+                //
+                return imageAbsolutePath.split(process.cwd())[1].replace("/src", "");
+              }
+            }
           }
         ]
       }
