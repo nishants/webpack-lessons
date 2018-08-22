@@ -1,4 +1,4 @@
-# SCSS with webpack
+#  (SCSS with webpack
 - The scss loader works along with css loaders
 - scss loader reads the scss files and converts it into css which is then processed by css loaders
 - usually we will need some global config for scss to be available for all scss in the project
@@ -12,7 +12,22 @@
 - **sass-loader** : to load scss files
 - **sass-resource-loader** : to make global scss config available while loading other scss files
 
-
+```js
+{
+  test: /\.scss/,
+  exclude: /node_modules/,
+  use: [
+    // loaders for CSS 
+    "sass-loader",
+    {
+      loader: 'sass-resources-loader',
+      options: {
+        resources: ['./src/style/base/_vars.scss', './src/style/base/_base.scss']
+      }
+    }
+  ]
+}
+```
 
 
 # sass-resource-loader
