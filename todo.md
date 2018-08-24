@@ -1,7 +1,7 @@
 todo : 
 
-- create scss loader
-- create react-csss-modules config
+- **create scss loader**
+- **create react-csss-modules config**
 - create images loader
 - create webpack dev server
 - add hot module loader
