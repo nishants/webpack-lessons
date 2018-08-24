@@ -5,7 +5,9 @@
 Why using multiple plugins : 
 - **css-loader** : tells webpack how to handle the css
 
-- **mini-css-expract-plugin** : collects imported css and create a css file in build dir
+- **mini-css-expract-plugin** : collects imported css and create a css file for each dependecy in build dir
+
+- **extract-text-webpack-plugin* : this combines all css into a single file
 
   
 
