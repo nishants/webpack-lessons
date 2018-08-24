@@ -24,6 +24,11 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({filename: "[name].css"}),
-    new HTMLWebpackPlugin({title: "Generated HTML Test"})
+    new HTMLWebpackPlugin({title: "Generated HTML Test"}),
+    new HTMLWebpackPlugin({
+      title: 'Custom template',
+      filename: 'index--from-template.html',
+      template: './src/app.html'
+    })
   ]
 }

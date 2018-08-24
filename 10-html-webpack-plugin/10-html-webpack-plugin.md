@@ -93,3 +93,6 @@ It will generate following html
 </body>
 </html>
 ```
+
+# Custom html template
+Also we can choose to define our own custom template with following config  
