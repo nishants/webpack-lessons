@@ -1,4 +1,4 @@
-todo : 
+todo : read 
 
 
 
@@ -39,7 +39,9 @@ todo :
 
 **Progressive web app**
 
-- generate service worker
+- Read https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle
+
+- webpack-workbox-plugin
 - cache resources on client side
 - cache data on client side
 
