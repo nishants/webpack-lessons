@@ -3,17 +3,25 @@ const
     HTMLWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   devtool: "source-map",
   entry: {
     "one": "./src/page-one.js",
-    "two": "./src/page-two.js"
+    "two": "./src/page-two.js",
+    "react-app": "./src/react-app.js"
   },
   output: {
-    filename: "page-[name].js"
+    filename: "page-[name]-[contenthash].js"
   },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      },
       {
         test: /\.css/,
         exclude: /node_modules/,

@@ -1,5 +1,19 @@
 todo : 
 
+
+
+### Fundamentals of webpack
+
+- **idea behind webpack**
+- **entry points or source code**
+- **output of compilation**
+- **loading various type of files in source code**
+- **plugins for extending webpack** 
+
+
+
+**Compiling web project with webpack**
+
 - **create scss loader**
 - **create react-csss-modules config**
 - **create images loader**
@@ -7,12 +21,29 @@ todo :
 
 
 
+### Packaging resources
+
+- hashing with content hash
 - segregate vendor.js
-- generate source map
+- seggregate vendor.css
+- **generate source map**
+- uglify, minify
+- chunking and runtime chunks
+- loadable and react
+- react router and chunking
+- treeshaking
 
 
 
-- **watching files for changes**
+**Progressive web app**
+
+- generate service worker
+- cache resources on client side
+- cache data on client side
+
+
+
+- **Watching files for changes**
 - create webpack dev server
 - use webpack-middleware with expressjs
 - add hot module loader

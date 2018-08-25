@@ -1,7 +1,7 @@
 # Images with webpack
 
-- file-loader : emits file in output directory and returns public path in import/require statements
-- url-loader : converts file ino base64 code
+- **file-loader** : emits file in output directory and returns public path in import/require statements
+- **url-loade**r : converts file ino base64 code
 
 
 
