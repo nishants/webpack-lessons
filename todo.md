@@ -23,6 +23,7 @@ todo :
 
 ### Packaging resources
 
+- optimization
 - hashing with content hash
 - segregate vendor.js
 - seggregate vendor.css
@@ -32,6 +33,7 @@ todo :
 - loadable and react
 - react router and chunking
 - treeshaking
+- use image sprites with spritesmith
 
 
 
@@ -43,22 +45,25 @@ todo :
 
 
 
+**Setup dev environment**
+
 - **Watching files for changes**
 - create webpack dev server
 - use webpack-middleware with expressjs
 - add hot module loader
 
-
-
-- use image sprites
+- 
 
 
 
-- optimization
 - create a simple webpack react scss boilerplate
-- use image sprites
+
 - add jade loader
+
 - add linting
+
 - upload image and js assets to S3
+
 - create redux store
+
 - render on server side
