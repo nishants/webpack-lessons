@@ -1,4 +1,7 @@
 todo : read 
+Reads : 
+- https://survivejs.com/webpack
+- 
 
 
 
